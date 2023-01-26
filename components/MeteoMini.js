@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react'
+import { Text } from 'react-native'
 import { u } from './utils'
 
 import Spinner from './spinner'
 import MeteoDay from './MeteoDay'
 
-
+import NavButtons from './NavButtons'
+import ManageCommunes from './ManageCommunes'
+import SearchCommune from './SearchCommune'
 
 
 export default function MeteoMini () {
@@ -118,7 +121,12 @@ export default function MeteoMini () {
 	  }
 	  const aDate = new Date(1668783600 * 1000)
 
+// return <Text>{screenToShow_}</Text>
 
-	  return <Spinner/>
+
+  if (screenToShow_ === 'Spinner') return <Spinner {...props} />
+  if (screenToShow_ === 'MeteoDay') return <MeteoDay {...props} />
+  if (screenToShow_ === 'Properties') return <Spinner {...props} />
+  if (screenToShow_ === 'SearchCommune')   return <SearchCommune {...props} />
   
   }
