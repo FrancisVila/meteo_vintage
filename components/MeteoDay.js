@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import React, { useState, useEffect } from 'react';
 import CommuneSwiper from './CommuneSwiper';
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
@@ -92,7 +92,9 @@ const hourDesc=(hourData)=> <Text> {hourData["weather"][0]["description"]} </Tex
     
     
     <View style={[ st.container]}>
-    <Text>{dataStr_}</Text>
+	<ScrollView>
+	<Text style={st.pageHeader}>DDD{data_['name']}BBB</Text>
+    <Text>xxxx{dataStr_}xxxx</Text>
     {/* <Text>itemId: {params.otherParam}</Text> */}
         {/* <GestureRecognizer onSwipeLeft={(state) => onSwipeLeft(state)} onSwipeRight={(state) => onSwipeRight(state)}> */}
          {/* </GestureRecognizer> */}
@@ -120,12 +122,15 @@ const hourDesc=(hourData)=> <Text> {hourData["weather"][0]["description"]} </Tex
             <View style={[st.sq, st.c0]}/>
         </View> */}
         {/* <View style={[st.layer_bottom, st.c3]}>    </View> */}
+
+		</ScrollView>
     </View>
    
   );
 }
 
 const st=StyleSheet.create({
+	pageHeader : {fontSize:30, margin:5},
     wrap_row:{flexWrap:'wrap', flexDirection:'row'},
     container:{flex:1},
     layer:{flex:1},
