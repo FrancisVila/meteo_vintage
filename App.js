@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import MeteoApp from './components/MeteoMini';
+import MeteoApp from './components/MeteoApp';
 
 
 export default function App() {
