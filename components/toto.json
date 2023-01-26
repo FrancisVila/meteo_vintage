@@ -1,0 +1,216 @@
+[
+	{"clouds": 
+	{"all": 75}, "dt": 1670511600, "dt_txt": "2022-12-08 15:00:00", "main": 
+	{"feels_like": 3.75, "grnd_level": 997, "humidity": 81, "pressure": 1009, "sea_level": 1009, "temp": 5.82, "temp_kf": 1.21, "temp_max": 5.82, "temp_min": 4.61}, "pop": 0.34, "rain": 
+	{"3h": 0.2}, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 69, "gust": 3.54, "speed": 2.65}}, 
+	{"clouds": 
+	{"all": 78}, "dt": 1670522400, "dt_txt": "2022-12-08 18:00:00", "main": 
+	{"feels_like": 3.03, "grnd_level": 996, "humidity": 85, "pressure": 1009, "sea_level": 1009, "temp": 4.93, "temp_kf": 1.78, "temp_max": 4.93, "temp_min": 3.15}, "pop": 0.24, "rain": 
+	{"3h": 0.13}, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 80, "gust": 4.62, "speed": 2.26}}, 
+	{"clouds": 
+	{"all": 67}, "dt": 1670533200, "dt_txt": "2022-12-08 21:00:00", "main": 
+	{"feels_like": 0.91, "grnd_level": 996, "humidity": 88, "pressure": 1008, "sea_level": 1008, "temp": 2.92, "temp_kf": 1.45, "temp_max": 2.92, "temp_min": 1.47}, "pop": 0, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 90, "gust": 2.85, "speed": 2.03}}, 
+	{"clouds": 
+	{"all": 66}, "dt": 1670544000, "dt_txt": "2022-12-09 00:00:00", "main": 
+	{"feels_like": 1.1, "grnd_level": 996, "humidity": 87, "pressure": 1008, "sea_level": 1008, "temp": 1.1, "temp_kf": 0, "temp_max": 1.1, "temp_min": 1.1}, "pop": 0, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 100, "gust": 1.63, "speed": 1.31}}, 
+	{"clouds": 
+	{"all": 48}, "dt": 1670554800, "dt_txt": "2022-12-09 03:00:00", "main": 
+	{"feels_like": 0.08, "grnd_level": 995, "humidity": 87, "pressure": 1007, "sea_level": 1007, "temp": 0.08, "temp_kf": 0, "temp_max": 0.08, "temp_min": 0.08}, "pop": 0.12, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	
+	{"deg": 68, "gust": 1.65, "speed": 1.33}}, 
+	{"clouds": 
+	{"all": 47}, "dt": 1670565600, "dt_txt": "2022-12-09 06:00:00", "main": 
+	{"feels_like": 0.09, "grnd_level": 995, "humidity": 86, "pressure": 1007, "sea_level": 1007, "temp": 0.09, "temp_kf": 0, "temp_max": 0.09, "temp_min": 0.09}, "pop": 0.12, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 
+	85, "gust": 1.72, "speed": 1.11}}, 
+	{"clouds": 
+	{"all": 71}, "dt": 1670576400, "dt_txt": "2022-12-09 09:00:00", "main": 
+	{"feels_like": 1.15, "grnd_level": 995, "humidity": 82, "pressure": 1008, "sea_level": 1008, "temp": 1.15, "temp_kf": 0, "temp_max": 1.15, "temp_min": 1.15}, "pop": 0, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 109, "gust": 1.44, "speed": 0.19}}, 
+	{"clouds": 
+	{"all": 57}, "dt": 1670587200, "dt_txt": "2022-12-09 12:00:00", "main": 
+	{"feels_like": 3.21, "grnd_level": 995, "humidity": 67, "pressure": 1007, "sea_level": 1007, "temp": 4.49, "temp_kf": 0, "temp_max": 4.49, "temp_min": 4.49}, "pop": 0.03, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 357, "gust": 3.04, "speed": 1.62}}, 
+	{"clouds": 
+	{"all": 33}, "dt": 1670598000, "dt_txt": "2022-12-09 15:00:00", "main": 
+	{"feels_like": 1.57, "grnd_level": 994, "humidity": 74, "pressure": 1007, "sea_level": 1007, "temp": 3.69, "temp_kf": 0, "temp_max": 3.69, "temp_min": 3.69}, "pop": 0.34, "snow": 
+	{"3h": 0.11}, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 27, "gust": 3.65, "speed": 2.26}}, 
+	{"clouds": 
+	{"all": 56}, "dt": 1670608800, "dt_txt": "2022-12-09 18:00:00", "main": 
+	{"feels_like": 1.19, "grnd_level": 996, "humidity": 94, "pressure": 1008, 
+	"sea_level": 1008, "temp": 1.19, "temp_kf": 0, "temp_max": 1.19, "temp_min": 1.19}, "pop": 0.37, "rain": 
+	{"3h": 0.37}, "sys": 
+	{"pod": "n"}, "visibility": 8096, "weather": [[Object]], "wind": 
+	{"deg": 89, "gust": 1.8, "speed": 1.11}}, 
+	{"clouds": 
+	{"all": 98}, "dt": 1670619600, "dt_txt": "2022-12-09 21:00:00", "main": 
+	{"feels_like": 1.39, "grnd_level": 997, "humidity": 98, "pressure": 1009, "sea_level": 1009, "temp": 1.39, "temp_kf": 0, "temp_max": 1.39, "temp_min": 1.39}, "pop": 0.5, "rain": 
+	{"3h": 0.33}, "sys": 
+	{"pod": "n"}, "visibility": 1146, "weather": [[Object]], "wind": 
+	{"deg": 254, "gust": 1.66, "speed": 1.19}}, 
+	{"clouds": 
+	{"all": 97}, "dt": 1670630400, "dt_txt": "2022-12-10 00:00:00", "main": 
+	{"feels_like": -1.22, "grnd_level": 998, "humidity": 97, "pressure": 1010, "sea_level": 1010, "temp": 0.98, "temp_kf": 0, "temp_max": 0.98, "temp_min": 0.98}, "pop": 0.45, "snow": 
+	{"3h": 0.34}, "sys": 
+	{"pod": "n"}, "visibility": 5395, "weather": [[Object]], "wind": 
+	{"deg": 252, "gust": 2.34, "speed": 1.92}}, 
+	{"clouds": 
+	{"all": 93}, "dt": 1670641200, "dt_txt": "2022-12-10 03:00:00", "main": 
+	{"feels_like": -0.02, "grnd_level": 998, "humidity": 96, "pressure": 1011, "sea_level": 1011, "temp": -0.02, "temp_kf": 0, "temp_max": -0.02, "temp_min": -0.02}, "pop": 0.04, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 244, "gust": 1.69, "speed": 1.19}}, 
+	{"clouds": 
+	{"all": 65}, "dt": 1670652000, "dt_txt": "2022-12-10 06:00:00", "main": 
+	{"feels_like": -3.48, "grnd_level": 998, "humidity": 94, "pressure": 1011, "sea_level": 1011, "temp": -1.09, "temp_kf": 0, "temp_max": -1.09, "temp_min": -1.09}, "pop": 0, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 233, "gust": 1.89, "speed": 1.82}}, 
+	{"clouds": 
+	{"all": 8}, "dt": 1670662800, "dt_txt": "2022-12-10 09:00:00", "main": 
+	{"feels_like": -2, "grnd_level": 999, "humidity": 87, "pressure": 1012, "sea_level": 1012, "temp": 0.17, "temp_kf": 0, "temp_max": 0.17, "temp_min": 0.17}, "pop": 0, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 213, "gust": 1.98, "speed": 1.8}}, 
+	{"clouds": 
+	{"all": 8}, "dt": 1670673600, "dt_txt": "2022-12-10 12:00:00", "main": 
+	{"feels_like": 2.6, "grnd_level": 999, "humidity": 68, "pressure": 1012, "sea_level": 1012, "temp": 4.45, "temp_kf": 0, "temp_max": 4.45, "temp_min": 4.45}, "pop": 0, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 211, "gust": 2.58, "speed": 2.12}}, 
+	{"clouds": 
+	{"all": 35}, "dt": 1670684400, "dt_txt": "2022-12-10 15:00:00", "main": 
+	{"feels_like": 1.3, "grnd_level": 999, "humidity": 76, "pressure": 1012, "sea_level": 1012, "temp": 3.33, "temp_kf": 0, "temp_max": 3.33, "temp_min": 3.33}, "pop": 0.05, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 226, "gust": 2.43, "speed": 2.11}}, 
+	{"clouds": 
+	{"all": 30}, "dt": 1670695200, "dt_txt": "2022-12-10 18:00:00", "main": 
+	{"feels_like": -3.75, "grnd_level": 1000, "humidity": 89, "pressure": 1012, "sea_level": 1012, "temp": -0.26, "temp_kf": 0, "temp_max": -0.26, "temp_min": -0.26}, "pop": 0, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 210, "gust": 3.76, "speed": 2.93}}, 
+	{"clouds": 
+	{"all": 61}, "dt": 1670706000, "dt_txt": "2022-12-10 21:00:00", "main": 
+	{"feels_like": -4.56, "grnd_level": 1000, "humidity": 88, "pressure": 1013, "sea_level": 1013, "temp": -0.78, "temp_kf": 0, "temp_max": -0.78, "temp_min": -0.78}, "pop": 0.09, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 207, "gust": 4.44, "speed": 3.14}}, 
+	{"clouds": 
+	{"all": 48}, "dt": 1670716800, "dt_txt": "2022-12-11 00:00:00", "main": 
+	{"feels_like": -5.43, "grnd_level": 1000, "humidity": 88, "pressure": 1013, "sea_level": 1013, "temp": -1.34, "temp_kf": 0, "temp_max": -1.34, "temp_min": -1.34}, "pop": 0.07, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 208, "gust": 6.14, "speed": 3.36}}, 
+	{"clouds": 
+	{"all": 24}, "dt": 1670727600, "dt_txt": "2022-12-11 03:00:00", "main": 
+	{"feels_like": -5.98, "grnd_level": 1000, "humidity": 89, "pressure": 1012, "sea_level": 1012, "temp": -1.9, "temp_kf": 0, "temp_max": -1.9, "temp_min": -1.9}, "pop": 0.09, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 210, "gust": 6.55, "speed": 3.22}}, 
+	{"clouds": 
+	{"all": 20}, "dt": 1670738400, "dt_txt": "2022-12-11 06:00:00", "main": 
+	{"feels_like": -6.94, "grnd_level": 999, "humidity": 85, "pressure": 1012, "sea_level": 1012, "temp": -1.87, "temp_kf": 0, "temp_max": -1.87, "temp_min": -1.87}, "pop": 0.09, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 212, "gust": 11.57, "speed": 4.51}}, 
+	{"clouds": 
+	{"all": 89}, "dt": 1670749200, "dt_txt": "2022-12-11 09:00:00", "main": 
+	{"feels_like": -4.92, "grnd_level": 999, "humidity": 76, "pressure": 1011, "sea_level": 1011, "temp": -0.36, "temp_kf": 0, "temp_max": -0.36, "temp_min": -0.36}, "pop": 0.27, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 220, "gust": 11.41, "speed": 4.29}}, 
+	{"clouds": 
+	{"all": 88}, "dt": 1670760000, "dt_txt": "2022-12-11 12:00:00", "main": 
+	{"feels_like": -1.62, "grnd_level": 998, "humidity": 71, "pressure": 1010, "sea_level": 1010, "temp": 2.71, "temp_kf": 0, "temp_max": 2.71, "temp_min": 2.71}, "pop": 0.41, "snow": 
+	{"3h": 0.21}, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 229, "gust": 9.14, "speed": 5.18}}, 
+	{"clouds": 
+	{"all": 100}, "dt": 1670770800, "dt_txt": "2022-12-11 15:00:00", "main": 
+	{"feels_like": -2.22, "grnd_level": 998, "humidity": 85, "pressure": 1010, "sea_level": 1010, "temp": 2.15, "temp_kf": 0, "temp_max": 2.15, "temp_min": 2.15}, "pop": 0.77, "rain": 
+	{"3h": 1.09}, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	
+	{"deg": 224, "gust": 9.24, "speed": 4.98}}, 
+	{"clouds": 
+	{"all": 100}, "dt": 1670781600, "dt_txt": "2022-12-11 18:00:00", "main": 
+	{"feels_like": -3.3, "grnd_level": 998, "humidity": 97, "pressure": 1010, "sea_level": 1010, "temp": 0.06, "temp_kf": 0, "temp_max": 0.06, "temp_min": 0.06}, "pop": 0.84, "rain": 
+	{"3h": 0.19}, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object], [Object]], "wind": 
+	{"deg": 230, "gust": 6.54, "speed": 2.86}}, 
+	{"clouds": 
+	{"all": 88}, "dt": 1670792400, "dt_txt": "2022-12-11 21:00:00", "main": 
+	{"feels_like": -1.6, "grnd_level": 999, "humidity": 94, "pressure": 1011, "sea_level": 1011, "temp": 0.79, "temp_kf": 0, "temp_max": 0.79, "temp_min": 0.79}, "pop": 0.16, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 241, "gust": 2.33, "speed": 2.05}}, 
+	{"clouds": 
+	{"all": 82}, "dt": 1670803200, "dt_txt": "2022-12-12 00:00:00", "main": 
+	{"feels_like": -2.27, "grnd_level": 999, "humidity": 92, "pressure": 1012, "sea_level": 1012, "temp": 0.14, "temp_kf": 0, "temp_max": 0.14, "temp_min": 0.14}, "pop": 0.15, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 245, "gust": 2.14, "speed": 1.98}}, 
+	{"clouds": 
+	{"all": 60}, "dt": 1670814000, "dt_txt": "2022-12-12 03:00:00", "main": 
+	{"feels_like": -2.86, "grnd_level": 1000, "humidity": 87, "pressure": 1012, "sea_level": 1012, "temp": -0.3, "temp_kf": 0, "temp_max": -0.3, "temp_min": -0.3}, "pop": 0.1, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 251, "gust": 2.14, "speed": 2.04}}, 
+	{"clouds": 
+	{"all": 68}, "dt": 1670824800, "dt_txt": "2022-12-12 06:00:00", "main": 
+	{"feels_like": -1.93, "grnd_level": 1000, "humidity": 86, "pressure": 1012, "sea_level": 1012, "temp": 0.4, "temp_kf": 0, "temp_max": 0.4, "temp_min": 0.4}, "pop": 0.06, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 252, "gust": 2.21, "speed": 1.95}}, 
+	{"clouds": 
+	{"all": 62}, "dt": 1670835600, "dt_txt": "2022-12-12 09:00:00", "main": 
+	{"feels_like": -2.05, "grnd_level": 1001, "humidity": 83, "pressure": 1013, "sea_level": 1013, "temp": 0.65, "temp_kf": 0, "temp_max": 0.65, "temp_min": 0.65}, "pop": 0, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 249, "gust": 2.88, "speed": 2.31}}, 
+	{"clouds": 
+	{"all": 56}, "dt": 1670846400, "dt_txt": "2022-12-12 12:00:00", "main": 
+	{"feels_like": 1.01, "grnd_level": 1001, "humidity": 72, "pressure": 1013, "sea_level": 1013, "temp": 3.95, "temp_kf": 0, "temp_max": 3.95, "temp_min": 3.95}, "pop": 0, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 270, "gust": 4.97, "speed": 3.32}}, 
+	{"clouds": 
+	{"all": 16}, "dt": 1670857200, "dt_txt": "2022-12-12 15:00:00", "main": 
+	{"feels_like": -0.41, "grnd_level": 1000, "humidity": 79, "pressure": 1012, "sea_level": 1012, "temp": 2.59, "temp_kf": 0, "temp_max": 2.59, "temp_min": 2.59}, "pop": 0.41, "rain": 
+	{"3h": 0.1}, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 266, "gust": 5.12, "speed": 3.03}}, 
+	{"clouds": 
+	{"all": 32}, "dt": 1670868000, "dt_txt": "2022-12-12 18:00:00", "main": 
+	{"feels_like": -3.35, "grnd_level": 999, "humidity": 91, "pressure": 1012, "sea_level": 1012, "temp": -0.3, "temp_kf": 0, "temp_max": -0.3, "temp_min": -0.3}, "pop": 0.45, "snow": 
+	{"3h": 0.29}, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 248, "gust": 2.85, "speed": 2.47}}, 
+	{"clouds": 
+	{"all": 43}, "dt": 1670878800, "dt_txt": "2022-12-12 21:00:00", "main": 
+	{"feels_like": -5.05, "grnd_level": 999, "humidity": 94, "pressure": 1012, "sea_level": 1012, "temp": -1.44, "temp_kf": 0, "temp_max": -1.44, "temp_min": -1.44}, "pop": 0.24, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 217, "gust": 3.49, "speed": 2.81}}, 
+	{"clouds": 
+	{"all": 31}, "dt": 1670889600, "dt_txt": "2022-12-13 00:00:00", "main": 
+	{"feels_like": -4.8, "grnd_level": 999, "humidity": 91, "pressure": 1011, "sea_level": 1011, "temp": -1.88, "temp_kf": 0, "temp_max": -1.88, "temp_min": -1.88}, "pop": 0.25, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 204, "gust": 2.24, "speed": 2.12}}, 
+	{"clouds": 
+	{"all": 11}, "dt": 1670900400, "dt_txt": "2022-12-13 03:00:00", "main": 
+	{"feels_like": -4.37, "grnd_level": 999, "humidity": 91, "pressure": 1011, "sea_level": 1011, "temp": -2.32, "temp_kf": 0, "temp_max": -2.32, "temp_min": -2.32}, "pop": 0.14, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 170, "gust": 1.39, "speed": 1.48}}, 
+	{"clouds": 
+	{"all": 14}, "dt": 1670911200, "dt_txt": "2022-12-13 06:00:00", "main": 
+	{"feels_like": -5.41, "grnd_level": 998, "humidity": 92, "pressure": 1010, "sea_level": 1010, "temp": -2.64, "temp_kf": 0, "temp_max": -2.64, "temp_min": -2.64}, "pop": 0.14, "sys": 
+	{"pod": "n"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 122, "gust": 2.21, "speed": 1.91}}, 
+	{"clouds": 
+	{"all": 46}, "dt": 1670922000, "dt_txt": "2022-12-13 09:00:00", "main": 
+	{"feels_like": -4.91, "grnd_level": 999, "humidity": 90, "pressure": 1011, "sea_level": 1011, "temp": -1.75, "temp_kf": 0, "temp_max": -1.75, "temp_min": -1.75}, "pop": 0.11, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 114, "gust": 4.44, "speed": 2.34}}, 
+	{"clouds": 
+	{"all": 53}, "dt": 1670932800, "dt_txt": "2022-12-13 12:00:00", "main": 
+	{"feels_like": -2.52, "grnd_level": 998, "humidity": 81, "pressure": 1011, "sea_level": 1011, "temp": 1.26, "temp_kf": 0, "temp_max": 1.26, "temp_min": 1.26}, "pop": 0.1, "sys": 
+	{"pod": "d"}, "visibility": 10000, "weather": [[Object]], "wind": 
+	{"deg": 97, "gust": 4.97, "speed": 3.69}}]
