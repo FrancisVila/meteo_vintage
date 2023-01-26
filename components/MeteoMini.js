@@ -10,7 +10,7 @@ import ManageCommunes from './ManageCommunes'
 import SearchCommune from './SearchCommune'
 
 
-export default function MeteoMini () {
+export default function MeteoApp () {
 	u.permalog('MeteoApp enter =======================================')
 	const apiKey = '477f078c4051f7949ab33b17f8a591e6'
 	// let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${apiKey}`;
