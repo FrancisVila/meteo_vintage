@@ -78,54 +78,37 @@ const hourTemp=(hourData)=><Text> {parseInt (hourData["main"]["temp"])}° </Text
 
 const hourDesc=(hourData)=> <Text> {hourData["weather"][0]["description"]} </Text>
 
+const handleSearch = ()=> {
+	props.screenToShow_set('SearchCommune')
+}
 
 // console.log("MeteoDay props.apiData_['list']=", props.apiData_['list'])
   return (
-    
-    
     <View style={[ st.container]}>
 	<ScrollView>
-	<Text style={st.pageHeader}>{props.userCommuneList_[0]['name']}</Text>
-    {/* <Text>itemId: {params.otherParam}</Text> */}
-        {/* <GestureRecognizer onSwipeLeft={(state) => onSwipeLeft(state)} onSwipeRight={(state) => onSwipeRight(state)}> */}
-         {/* </GestureRecognizer> */}
-        {/* <CommuneSwiper userCommuneList_={userCommuneList_} /> */}
-
-        <CommuneSwiper {...props}  />
-
-        {/* <View style={[st.iconbar]}></View> */}
-        {/* <View style={[st.layer_top, st.c1]}>
-            <View style={[st.rnd, st.c0]}/>
-            <View style={[st.rnd, st.c0]}/>
-        </View> */}
+	<View style={st.headerView}>
+		<Text style={st.pageHeader}>{props.userCommuneList_[0]['name']} </Text>
+		<Text style={st.searchIcon} onPress={handleSearch}>⌕</Text>
+	</View>
         <View style={[st.layer_middle]}>
 {(props.apiData_["list"]).map((hourData)=> <View style={st.wrap_row} key={hourData["dt"]} >{hourInfo(hourData)}{hourWeatherIcon00(hourData)}{hourTemp(hourData)}{hourDesc(hourData)}</View>)}
         </View>
-        {/* <View style={[st.layer_middle, st.c4, st.wrap_row]}>
-            <View style={[st.sq, st.c0]}/>
-            <View style={[st.sq, st.c0]}/>
-            <View style={[st.sq, st.c0]}/>
-            <View style={[st.sq, st.c0]}/>
-            <View style={[st.sq, st.c0]}/>
-            <View style={[st.sq, st.c0]}/>
-            <View style={[st.sq, st.c0]}/>
-            <View style={[st.sq, st.c0]}/>
-            <View style={[st.sq, st.c0]}/>
-        </View> */}
-        {/* <View style={[st.layer_bottom, st.c3]}>    </View> */}
-
 		</ScrollView>
     </View>
-   
   );
 }
 
 const st=StyleSheet.create({
+	headerView : {width:'100%', flexDirection:'row' },
+	searchIconView : { position: 'absolute', left:0 },
+	searchIcon : {fontSize:40, position: 'absolute', right:20, top: 15 },
 	pageHeader : {
 		fontSize:30, 
 		margin:5, 
 		textAlign:'center',
-		marginTop: 20
+		marginTop: 20,
+		marginBottom: 50,
+		width: '100%',
 	},
     wrap_row:{flexWrap:'wrap', flexDirection:'row'},
     container:{flex:1, width: '100%'},
