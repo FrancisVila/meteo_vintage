@@ -22,22 +22,14 @@ useEffect( () => {
     }
     rClS()
 }, []);
+
+// read the list of communes from file
 const readCommuneList = async () => {
-
     const strContent = await xfs.readAsStringAsync(fileUri,{ encoding: xfs.EncodingType.UTF8 });
-
     // return strContent
     return JSON.parse(strContent)
   }
 
-
-    // console.log(`2 inside MeteoDay, userCommuneList_=${userCommuneList_}`)
-
-
-    // console.log(`3 inside MeteoDay, JSON.stringify(apiData_["list"]) =${JSON.stringify(apiData_)}`)
-    // console.log(`3 inside MeteoDay, apiData_["list"][0]["dt"] =${apiData_["list"][0]["dt"]}`)
-    // console.log(`3 inside MeteoDay, userCommuneList_[0]['name']=${userCommuneList_[0]['name']}`)
-    
     const onSwipeLeft=(gestureState) => {
 
 readCommuneList
@@ -93,8 +85,7 @@ const hourDesc=(hourData)=> <Text> {hourData["weather"][0]["description"]} </Tex
     
     <View style={[ st.container]}>
 	<ScrollView>
-	<Text style={st.pageHeader}>DDD{data_['name']}BBB</Text>
-    <Text>xxxx{dataStr_}xxxx</Text>
+	<Text style={st.pageHeader}>{props.userCommuneList_[0]['name']}</Text>
     {/* <Text>itemId: {params.otherParam}</Text> */}
         {/* <GestureRecognizer onSwipeLeft={(state) => onSwipeLeft(state)} onSwipeRight={(state) => onSwipeRight(state)}> */}
          {/* </GestureRecognizer> */}
@@ -130,9 +121,14 @@ const hourDesc=(hourData)=> <Text> {hourData["weather"][0]["description"]} </Tex
 }
 
 const st=StyleSheet.create({
-	pageHeader : {fontSize:30, margin:5},
+	pageHeader : {
+		fontSize:30, 
+		margin:5, 
+		textAlign:'center',
+		marginTop: 20
+	},
     wrap_row:{flexWrap:'wrap', flexDirection:'row'},
-    container:{flex:1},
+    container:{flex:1, width: '100%'},
     layer:{flex:1},
     layer_top:{height:50, flexDirection:'row',  justifyContent:'center', alignItems:'center'},
     layer_middle:{flex:1},
