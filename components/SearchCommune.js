@@ -206,12 +206,8 @@ export const SearchCommune = props => {
     return ret
   }
 
-  return (
-    <View style={[]}>
-      <Pressable onPress={() => props.screenToShow_set('MeteoDay')}>
-        <Ionicons size={20} name='add-circle' style={st.closeButton} />
-      </Pressable>
-      <View style={[st.layer_top, st.cx]}>
+  return ( <View style={[st.container]}>
+      <View style={[st.layer_top]}>
         <TextInput
           placeholder='Entrer un nom de commune'
           style={[st.textInput]}
@@ -223,7 +219,6 @@ export const SearchCommune = props => {
         ></TextInput>
       </View>
       <View id='modalHeader' style={st.listItem}></View>
-
       <FlatList
         id='selectableList'
         ItemSeparatorComponent={ItemDivider}
@@ -254,17 +249,22 @@ export const SearchCommune = props => {
 }
 
 const st = StyleSheet.create({
-  buttonItem: {
-    backgroundColor: '#ddd',
-    width: 300,
-    textAlign: 'left',
-    borderRadius: 20,
-    color: '#000',
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-    alignSelf: 'center'
+	pink:{backgroundColor:'pink'},
+	yellow:{backgroundColor:'yellow'},
+	red:{backgroundColor:'red'},
+	blue:{backgroundColor:'blue'},
+	container:{width:'100%',height:'100%', padding:0, margin:50},
+  	buttonItem: {
+		backgroundColor: '#ddd',
+		width: 300,
+		textAlign: 'left',
+		borderRadius: 20,
+		color: '#000',
+		textAlign: 'center',
+		alignItems: 'center',
+		justifyContent: 'center',
+		flexDirection: 'row',
+		alignSelf: 'center'
   },
   buttonItemText: {
     fontSize: 20,
@@ -274,26 +274,7 @@ const st = StyleSheet.create({
     marginTop: 30
   },
 
-  modalBody: {
-    flex: 1,
-    overflow: 'hidden',
-    height: '100%',
-    marginTop: 20,
-    marginLeft: 20,
-    marginRight: 20
-  },
 
-  modalWrapper: {
-    flexDirection: 'column',
-    margin: 20,
-    padding: 10,
-    color: '#000',
-    borderRadius: 10,
-    backgroundColor: '#fff',
-    zIndex: 20, // works on ios
-    elevation: 20,
-    height: '80%'
-  },
   listItem: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -371,7 +352,8 @@ const st = StyleSheet.create({
     textAlign: 'center'
   },
   layer_top: {
-    height: 50,
+marginTop: 30,
+marginBottom: 15,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'

@@ -1,0 +1,7 @@
+{
+  "name": "Debug Android Hermes - Experimental",
+  "cwd": "${workspaceFolder}",
+  "type": "reactnativedirect",
+  "request": "launch",
+  "platform": "android"
+}
