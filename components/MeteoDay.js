@@ -9,7 +9,9 @@ import * as xfs from 'expo-file-system'
 
 export const MeteoDay = (props) => {
 	u.permalog("enter MeteoDay ================================== ")
-	console.log("MeteoDay props=", props)
+	console.log("MeteoDay props.apiData_=", props.apiData_)
+	console.log("MeteoDay props.currentCommune_=", props.currentCommune_)
+	console.log("MeteoDay props.currentCommune_.name=", props.currentCommune_.name)
 const [dataStr_, dataStr_set] = useState('no data yet');
 const [data_, data_set] = useState([]);
 const filename = 'listUserCommunes.txt'
@@ -68,9 +70,6 @@ const saveCommuneList =  (data) => {
   const readCommuneListStr = async () => {
     const strContent = await xfs.readAsStringAsync(fileUri,{ encoding: xfs.EncodingType.UTF8 });
 
-
-
-
     dataStr_set(strContent)
     return strContent.toString()
   }
@@ -87,7 +86,7 @@ const handleSearch = ()=> {
     <View style={[ st.container]}>
 	<ScrollView>
 	<View style={st.headerView}>
-		<Text style={st.pageHeader}>{props.userCommuneList_[0]['name']} </Text>
+		<Text style={st.pageHeader}>{props.currentCommune_.name} </Text>
 		<Text style={st.searchIcon} onPress={handleSearch}>⌕</Text>
 	</View>
         <View style={[st.layer_middle]}>
