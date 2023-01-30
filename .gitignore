@@ -54,3 +54,5 @@ buck-out/
 .expo/
 web-build/
 dist/
+/keys
+components/MeteoApp.js
