@@ -43,10 +43,20 @@ readCommuneList
         // this.setState({myText: 'You swiped left!'});
       }
       
+const dayInFrench= (hourData, dayFromNow)=> {
+	const hourAsDate = u.getDateFromUnix( hourData["dt"])
+	let dayStr=""
+	switch (dayFromNow) {
+	case 0 :  dayStr = "Auj." ; break;
+	case 2 :  dayStr = "Dem." ; break;
+	default: dayStr = u.getDayInFrench( (hourAsDate), 'Ddd') + ' ' + hourAsDate.getDate() ; break;}
+	return dayStr
+}
+
 const hourInfo=(hourData)=> {
 
     const hourAsDate = u.getDateFromUnix( hourData["dt"])
-    return <Text key={hourData["dt"]}> { u.getDayInFrench( (hourAsDate), 'Ddd')}  {hourAsDate.getDate()} {("0" + hourAsDate.getHours()).slice(-2) }:00 </Text>
+    return <Text key={hourData["dt"]}>   {("0" + hourAsDate.getHours()).slice(-2) }:00 </Text>
 }
 
 const hourWeatherIcon=(hourData)=> {
@@ -58,10 +68,18 @@ const hourWeatherIcon=(hourData)=> {
 
 const hourWeatherIcon00=(hourData)=> {
     let weatherStr = hourData["weather"][0]["icon"]
-    return <WeatherIcon00 width={20} weather={weatherStr} /> 
+    return <WeatherIcon00 width={30} weather={weatherStr} /> 
 }
 
-
+const hourWeatherWind=(hourData)=> {
+	const rafales = Math.floor (3.6 * hourData["wind"]["gust"])
+	if (rafales > 20)
+		return <Text>, vent {rafales} km/h</Text>
+	else return null
+    // let windStr = `${Math.floor (3.6 * hourData["wind"]["speed"])} ${Math.floor (3.6 * hourData["wind"]["gust"])}`
+	// console.log("windStr=", windStr)
+    // return <Text>{windStr}</Text> 
+}
 const saveCommuneList =  (data) => {
     const strData = JSON.stringify(data)
     xfs.writeAsStringAsync(fileUri, strData, { encoding: xfs.EncodingType.UTF8 });
@@ -81,6 +99,34 @@ const handleSearch = ()=> {
 	props.screenToShow_set('SearchCommune')
 }
 
+const ShowWeather = ({hourData}) => {
+	// return <Text>{hourData.dt}</Text>
+	console.log("dayOfWeek=", dayOfWeek)
+	 const ret =  <View>
+	 {(dayOfWeek === dayInFrench(hourData))? 
+	 // if new day, show day header
+	 	null: 
+	 	<View style={st.divider}><Text style={st.dayHeader}>{dayInFrench(hourData, dayFromNow)}</Text></View>}
+
+	 <View style={st.wrap_row} key={hourData.dt} > 
+		<Text>
+			{hourInfo(hourData)}
+			{hourWeatherIcon00(hourData)}
+			{hourTemp(hourData)}
+			{hourDesc(hourData)}
+			{hourWeatherWind(hourData)}
+			</Text>
+	</View>
+	
+	</View>
+	dayOfWeek = dayInFrench(hourData)
+	dayFromNow++
+	return ret
+}
+
+let dayOfWeek = ""
+let dayFromNow = 0
+
 // console.log("MeteoDay props.apiData_['list']=", props.apiData_['list'])
   return (
     <View style={[ st.container]}>
@@ -90,7 +136,7 @@ const handleSearch = ()=> {
 		<Text style={st.searchIcon} onPress={handleSearch}>⌕</Text>
 	</View>
         <View style={[st.layer_middle]}>
-{(props.apiData_["list"]).map((hourData)=> <View style={st.wrap_row} key={hourData["dt"]} >{hourInfo(hourData)}{hourWeatherIcon00(hourData)}{hourTemp(hourData)}{hourDesc(hourData)}</View>)}
+		{props.apiData_["list"].map((hourData) => <ShowWeather hourData={hourData} ></ShowWeather>)}
         </View>
 		</ScrollView>
     </View>
@@ -98,6 +144,9 @@ const handleSearch = ()=> {
 }
 
 const st=StyleSheet.create({
+	divider:{ position:'absolute', top:-60, width:'100%', backgroundColor:'#ddd', height:170, paddingTop:50, zIndex:-10},
+	dayHeader :{fontSize:20, top:60, position:'absolute',  width:'100%', borderTopColor:'#333', borderTopWidth: 1,marginTop:15  },
+	wrap_row:{flexWrap:'wrap', flexDirection:'row', marginLeft:50, marginTop:5},
 	headerView : {width:'100%', flexDirection:'row' },
 	searchIconView : { position: 'absolute', left:0 },
 	searchIcon : {fontSize:40, position: 'absolute', right:20, top: 15 },
@@ -109,7 +158,7 @@ const st=StyleSheet.create({
 		marginBottom: 50,
 		width: '100%',
 	},
-    wrap_row:{flexWrap:'wrap', flexDirection:'row'},
+    
     container:{flex:1, width: '100%'},
     layer:{flex:1},
     layer_top:{height:50, flexDirection:'row',  justifyContent:'center', alignItems:'center'},

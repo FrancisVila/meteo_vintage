@@ -12,7 +12,7 @@ import SearchCommune from './SearchCommune'
 export default function MeteoApp () {
 	u.permalog('MeteoApp enter =======================================')
 	let keys = require('../keys/keys.json');
-	const apiKey = keys.apiKey
+	const apiKey = keys.newOpenweathermapApiKey
 	// let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${apiKey}`;
 	let lat = 49.0889824331
 	let lon = -0.608826965285
