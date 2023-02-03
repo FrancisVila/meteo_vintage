@@ -93,7 +93,7 @@ const saveCommuneList =  (data) => {
   }
 const hourTemp=(hourData)=><Text> {parseInt (hourData["main"]["temp"])}° </Text>
 
-const hourDesc=(hourData)=> <Text> {hourData["weather"][0]["description"]} </Text>
+const hourDesc=(hourData)=> <Text style={st.hourDesc}> {hourData["weather"][0]["description"]} </Text>
 
 const handleSearch = ()=> {
 	props.screenToShow_set('SearchCommune')
@@ -144,6 +144,7 @@ let dayFromNow = 0
 }
 
 const st=StyleSheet.create({
+	hourDesc:{fontSize:9},
 	divider:{ position:'absolute', top:-60, width:'100%', backgroundColor:'#ddd', height:170, paddingTop:50, zIndex:-10},
 	dayHeader :{fontSize:20, top:60, position:'absolute',  width:'100%', borderTopColor:'#333', borderTopWidth: 1,marginTop:15  },
 	wrap_row:{flexWrap:'wrap', flexDirection:'row', marginLeft:50, marginTop:5},
