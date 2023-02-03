@@ -14,8 +14,10 @@
     "expo-splash-screen": "~0.17.5",
     "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
+    "react-dom": "^18.2.0",
     "react-native": "0.70.5",
     "react-native-swipe-gestures": "^1.0.5",
+    "react-native-web": "~0.18.7",
     "react-navigation": "^4.4.4"
   },
   "devDependencies": {
