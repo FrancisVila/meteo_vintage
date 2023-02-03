@@ -1,4 +1,4 @@
-package com.meteovintage;
+package com.ttt;
 
 import android.os.Build;
 import android.os.Bundle;

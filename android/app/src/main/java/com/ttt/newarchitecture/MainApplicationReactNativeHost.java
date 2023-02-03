@@ -1,4 +1,4 @@
-package com.meteovintage.newarchitecture;
+package com.ttt.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -20,9 +20,9 @@ import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.meteovintage.BuildConfig;
-import com.meteovintage.newarchitecture.components.MainComponentsRegistry;
-import com.meteovintage.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.ttt.BuildConfig;
+import com.ttt.newarchitecture.components.MainComponentsRegistry;
+import com.ttt.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
