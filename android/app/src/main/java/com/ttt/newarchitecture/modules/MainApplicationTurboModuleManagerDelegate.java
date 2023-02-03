@@ -1,4 +1,4 @@
-package com.ttt.newarchitecture.modules;
+package com.meteovintage.newarchitecture.modules;
 
 import com.facebook.jni.HybridData;
 import com.facebook.react.ReactPackage;
