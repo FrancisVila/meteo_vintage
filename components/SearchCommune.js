@@ -323,7 +323,7 @@ const st = StyleSheet.create({
     borderWidth: 1,
     margin: 0,
     marginBottom: 10,
-    fontSize: 30
+    fontSize: 25
   },
 
   centeredView: {
@@ -354,8 +354,10 @@ const st = StyleSheet.create({
     textAlign: 'center'
   },
   layer_top: {
-marginTop: 30,
-marginBottom: 15,
+marginTop: 50,
+marginRight:20,
+marginLeft: 20,
+marginBottom: 25,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'

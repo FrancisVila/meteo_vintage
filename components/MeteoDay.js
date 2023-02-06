@@ -42,7 +42,27 @@ readCommuneList
 
         // this.setState({myText: 'You swiped left!'});
       }
-      
+
+
+
+function HourData({hourData}) {
+	const hourAsDate = u.getDateFromUnix( hourData["dt"])
+	let weatherStr = hourData["weather"][0]["icon"]
+	const rafales = Math.floor (3.6 * hourData["wind"]["gust"])
+return(
+  <View style={st.windDescView}>
+ <Text key={hourData["dt"]}>   {("0" + hourAsDate.getHours()).slice(-2) }:00 </Text>
+ <WeatherIcon00 width={30} weather={weatherStr} /> 
+ <Text style={[st.temp]}> {parseInt (hourData["main"]["temp"])}° </Text>
+ <Text style={[st.hourDesc]}> {hourData["weather"][0]["description"]} </Text>
+ <View style={[st.windDescView, (rafales>20)?'':st.hidden]}><Text style={[st.hourDesc]}> vent</Text><Text style={st.hourDescWindSpeed}> {rafales} </Text><Text style={st.hourDesc}>km/h</Text></View>
+  </View>);
+
+
+}
+
+
+
 const dayInFrench= (hourData, dayFromNow)=> {
 	const hourAsDate = u.getDateFromUnix( hourData["dt"])
 	let dayStr=""
@@ -58,32 +78,6 @@ const hourInfo=(hourData)=> {
     const hourAsDate = u.getDateFromUnix( hourData["dt"])
     return <Text key={hourData["dt"]}>   {("0" + hourAsDate.getHours()).slice(-2) }:00 </Text>
 }
-
-const hourWeatherIcon=(hourData)=> {
-    let weatherStr = hourData["weather"][0]["main"]
-    weatherStr = weatherStr.toLowerCase()
-
-    return <WeatherIcon width={20} weather={weatherStr} /> 
-}
-
-const hourWeatherIcon00=(hourData)=> {
-    let weatherStr = hourData["weather"][0]["icon"]
-    return <WeatherIcon00 width={30} weather={weatherStr} /> 
-}
-
-const hourWeatherWind=(hourData)=> {
-	const rafales = Math.floor (3.6 * hourData["wind"]["gust"])
-	if (rafales > 20)
-		return <View style={[st.windDescView, st.c1]}><Text style={st.hourDesc}> vent</Text><Text style={st.hourDescWindSpeed}> {rafales} </Text><Text style={st.hourDesc}>km/h</Text></View>
-	else return null
-    // let windStr = `${Math.floor (3.6 * hourData["wind"]["speed"])} ${Math.floor (3.6 * hourData["wind"]["gust"])}`
-	// console.log("windStr=", windStr)
-    // return <Text>{windStr}</Text> 
-}
-
-const hourTemp=(hourData)=><Text> {parseInt (hourData["main"]["temp"])}° </Text>
-
-const hourDesc=(hourData)=> <Text style={[st.hourDesc, st.c2]}> {hourData["weather"][0]["description"]} </Text>
 
 
 const saveCommuneList =  (data) => {
@@ -110,16 +104,10 @@ const ShowWeather = ({hourData}) => {
 	 {(dayOfWeek === dayInFrench(hourData))? 
 		// if new day, show day header
 			null: 
-			<View style={st.divider}><Text style={st.dayHeader}>QQQ {dayInFrench(hourData, dayFromNow)}</Text></View>}
+			<View style={st.divider}><Text style={st.dayHeader}>{dayInFrench(hourData, dayFromNow)}</Text></View>}
 	 <View style={st.wrap_row} key={hourData.dt} > 
+	 <HourData hourData={hourData}></HourData>
 
-		<Text>
-			{hourInfo(hourData)}
-			{hourWeatherIcon00(hourData)}
-			{hourTemp(hourData)}
-			{hourDesc(hourData)}
-			{hourWeatherWind(hourData)}
-			</Text>
 	</View>
 	</View> 
 	dayOfWeek = dayInFrench(hourData)
@@ -132,10 +120,44 @@ let dayFromNow = 0
 
 // console.log("MeteoDay props.apiData_['list']=", props.apiData_['list'])
   return (
-    <View style={[ st.container]}>
-	<ScrollView>
+    <View style={[ [st.container]]}>
+	      <ScrollView style={[st.scroller, st.hidden]}>
+		  <Text style={{fontFamily: 'normal', fontWeight:'bold'}}>  normal </Text>
+        <Text style={{fontFamily: 'notoserif', fontWeight:'bold'}}>  notoserif </Text>
+        <Text style={{fontFamily: 'sans-serif', fontWeight:'100'}}>  sans-serif </Text>
+        <Text style={{fontFamily: 'sans-serif-light', fontWeight:'100'}}>  sans-serif-light </Text>
+        <Text style={{fontFamily: 'sans-serif-thin', fontWeight:'100'}}>  sans-serif-thin </Text>
+        <Text style={{fontFamily: 'sans-serif-condensed', fontWeight:'100'}}>  sans-serif-condensed </Text>
+        <Text style={{fontFamily: 'sans-serif-medium', fontWeight:'100'}}>  sans-serif-medium </Text>
+        <Text style={{fontFamily: 'serif', fontWeight:'100'}}>  serif </Text>
+        <Text style={{fontFamily: 'Roboto', fontWeight:'100'}}>  Roboto </Text>
+        <Text style={{fontFamily: 'monospace', fontWeight:'100'}}>  monospace </Text>  
+
+        <Text style={{fontFamily: 'normal', fontWeight:'900'}}>  normal </Text>
+        <Text style={{fontFamily: 'notoserif', fontWeight:'900'}}>  notoserif </Text>
+        <Text style={{fontFamily: 'sans-serif', fontWeight:'900'}}>  sans-serif </Text>
+        <Text style={{fontFamily: 'sans-serif-light', fontWeight:'900'}}>  sans-serif-light </Text>
+        <Text style={{fontFamily: 'sans-serif-thin', fontWeight:'900'}}>  sans-serif-thin </Text>
+        <Text style={{fontFamily: 'sans-serif-condensed', fontWeight:'900'}}>  sans-serif-condensed </Text>
+        <Text style={{fontFamily: 'sans-serif-medium', fontWeight:'900'}}>  sans-serif-medium </Text>
+        <Text style={{fontFamily: 'serif', fontWeight:'900'}}>  serif </Text>
+        <Text style={{fontFamily: 'Roboto', fontWeight:'900'}}>  Roboto </Text>
+        <Text style={{fontFamily: 'monospace', fontWeight:'900'}}>  monospace </Text>        
+
+		<Text style={{fontFamily: 'normal'}}>  normal </Text>
+        <Text style={{fontFamily: 'notoserif'}}>  notoserif </Text>
+        <Text style={{fontFamily: 'sans-serif'}}>  sans-serif </Text>
+        <Text style={{fontFamily: 'sans-serif-light'}}>  sans-serif-light </Text>
+        <Text style={{fontFamily: 'sans-serif-thin'}}>  sans-serif-thin </Text>
+        <Text style={{fontFamily: 'sans-serif-condensed'}}>  sans-serif-condensed </Text>
+        <Text style={{fontFamily: 'sans-serif-medium'}}>  sans-serif-medium </Text>
+        <Text style={{fontFamily: 'serif'}}>  serif </Text>
+        <Text style={{fontFamily: 'Roboto'}}>  Roboto </Text>
+        <Text style={{fontFamily: 'monospace'}}>  monospace </Text>        
+      </ScrollView>
+	<ScrollView >
 	<View style={st.headerView}>
-		<Text style={st.pageHeader}>{props.currentCommune_.name} </Text>
+		<Text style={st.pageHeader}>{props.currentCommune_.name.toLowerCase()} </Text>
 		<Text style={st.searchIcon} onPress={handleSearch}>⌕</Text>
 	</View>
         <View style={[st.layer_middle]}>
@@ -147,12 +169,27 @@ let dayFromNow = 0
 }
 
 const st=StyleSheet.create({
-	windDescView : {display: 'flex', flexDirection:'row', height:'100%' , alignItems: 'flex-start'},
-	hourDesc : {display: 'flex', fontSize:9, justifyContent: 'flex-end'},
-	hourDescWindSpeed : {display: 'flex', fontSize:16, alignItems: 'center'},
-	divider:{ position:'absolute', top:-60, width:'100%', backgroundColor:'#ddd', height:170, paddingTop:50, zIndex:-10},
-	dayHeader :{fontSize:20, top:60, position:'absolute',  left:-45, width:'100%', borderTopColor:'#333', borderTopWidth: 1,marginTop:15  },
-	wrap_row:{flexWrap:'wrap', flexDirection:'row', marginLeft:50, marginTop:5, alignItems: 'center'},
+	hidden: {display:'none'},
+	scroller: {flex:1},
+	temp: {fontSize:16, fontWeight:'900'},
+	windDescView : {display: 'flex', flexDirection:'row', height:'100%' , alignItems: 'center'},
+	hourDesc : {display: 'flex', fontSize:9, },
+	hourDescWindSpeed : {display: 'flex', fontSize:16, },
+	divider:{ position:'absolute', top:-60, width:'100%', backgroundColor:'#ddd', height:170,  zIndex:-10},
+	dayHeader :{
+		fontSize:14, 
+		top:60, 
+		position:'absolute',  
+		left:0, width:'100%', 
+		borderTopColor:'#333', 
+		borderTopWidth: 1,
+		marginTop:0 ,
+		fontFamily: 'sans-serif-condensed',
+		fontWeight: 'bold',
+		paddingTop:10,
+		paddingLeft:5,
+	},
+	wrap_row:{flexWrap:'wrap', flexDirection:'row', marginLeft:100, marginTop:5, alignItems: 'center'},
 	headerView : {width:'100%', flexDirection:'row' },
 	searchIconView : { position: 'absolute', left:0 },
 	searchIcon : {fontSize:40, position: 'absolute', right:20, top: 15 },
@@ -163,6 +200,9 @@ const st=StyleSheet.create({
 		marginTop: 20,
 		marginBottom: 50,
 		width: '100%',
+		fontFamily: 'sans-serif-condensed',
+		fontWeight: 'bold'
+
 	},
     
     container:{flex:1, width: '100%'},
