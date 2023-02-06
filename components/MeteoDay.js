@@ -74,7 +74,7 @@ const hourWeatherIcon00=(hourData)=> {
 const hourWeatherWind=(hourData)=> {
 	const rafales = Math.floor (3.6 * hourData["wind"]["gust"])
 	if (rafales > 20)
-		return <Text>, vent {rafales} km/h</Text>
+		return <View style={[st.windDesc, st.c1]}><Text style={st.hourDesc}> vent</Text><Text> {rafales} </Text><Text style={st.hourDesc}>km/h</Text></View>
 	else return null
     // let windStr = `${Math.floor (3.6 * hourData["wind"]["speed"])} ${Math.floor (3.6 * hourData["wind"]["gust"])}`
 	// console.log("windStr=", windStr)
@@ -93,7 +93,7 @@ const saveCommuneList =  (data) => {
   }
 const hourTemp=(hourData)=><Text> {parseInt (hourData["main"]["temp"])}° </Text>
 
-const hourDesc=(hourData)=> <Text> {hourData["weather"][0]["description"]} </Text>
+const hourDesc=(hourData)=> <Text style={[st.hourDesc, st.c2]}> {hourData["weather"][0]["description"]} </Text>
 
 const handleSearch = ()=> {
 	props.screenToShow_set('SearchCommune')
@@ -102,13 +102,14 @@ const handleSearch = ()=> {
 const ShowWeather = ({hourData}) => {
 	// return <Text>{hourData.dt}</Text>
 	console.log("dayOfWeek=", dayOfWeek)
-	 const ret =  <View>
+	 const ret = 
+	 <View>
 	 {(dayOfWeek === dayInFrench(hourData))? 
-	 // if new day, show day header
-	 	null: 
-	 	<View style={st.divider}><Text style={st.dayHeader}>{dayInFrench(hourData, dayFromNow)}</Text></View>}
-
+		// if new day, show day header
+			null: 
+			<View style={st.divider}><Text style={st.dayHeader}>QQQ {dayInFrench(hourData, dayFromNow)}</Text></View>}
 	 <View style={st.wrap_row} key={hourData.dt} > 
+
 		<Text>
 			{hourInfo(hourData)}
 			{hourWeatherIcon00(hourData)}
@@ -117,8 +118,7 @@ const ShowWeather = ({hourData}) => {
 			{hourWeatherWind(hourData)}
 			</Text>
 	</View>
-	
-	</View>
+	</View> 
 	dayOfWeek = dayInFrench(hourData)
 	dayFromNow++
 	return ret
@@ -136,7 +136,7 @@ let dayFromNow = 0
 		<Text style={st.searchIcon} onPress={handleSearch}>⌕</Text>
 	</View>
         <View style={[st.layer_middle]}>
-		{props.apiData_["list"].map((hourData) => <ShowWeather hourData={hourData} ></ShowWeather>)}
+		{props.apiData_["list"].map((hourData) => <ShowWeather  hourData={hourData} ></ShowWeather>)}
         </View>
 		</ScrollView>
     </View>
@@ -144,9 +144,11 @@ let dayFromNow = 0
 }
 
 const st=StyleSheet.create({
+	windDesc : {display: 'flex', flexDirection:'row' },
+	hourDesc : {fontSize:9, justifyContent: 'center'},
 	divider:{ position:'absolute', top:-60, width:'100%', backgroundColor:'#ddd', height:170, paddingTop:50, zIndex:-10},
-	dayHeader :{fontSize:20, top:60, position:'absolute',  width:'100%', borderTopColor:'#333', borderTopWidth: 1,marginTop:15  },
-	wrap_row:{flexWrap:'wrap', flexDirection:'row', marginLeft:50, marginTop:5},
+	dayHeader :{fontSize:20, top:60, position:'absolute',  left:-45, width:'100%', borderTopColor:'#333', borderTopWidth: 1,marginTop:15  },
+	wrap_row:{flexWrap:'wrap', flexDirection:'row', marginLeft:50, marginTop:5, alignItems: 'center'},
 	headerView : {width:'100%', flexDirection:'row' },
 	searchIconView : { position: 'absolute', left:0 },
 	searchIcon : {fontSize:40, position: 'absolute', right:20, top: 15 },

@@ -21,6 +21,7 @@ import Ionicons from '@expo/vector-icons/Ionicons'
 import { u } from './utils'
 
 export const SearchCommune = props => {
+	u.permalog('entering SearchCommune')
   const getLocation = async () => {
     const location = await getCurrentPositionAsync()
 
@@ -33,7 +34,7 @@ export const SearchCommune = props => {
   const [userEntry_, userEntry_set] = useState('')
   const [listSelectableCommunes_, listSelectableCommunes_set] = useState([])
   const [modalVisible_, modalVisible_set] = useState(false)
-
+  u.permalog('SearchCommune 1111111111111111')
   useEffect(() => {
     listSelectableCommunes_set(listBigCommunes())
     console.log('setting listSelectableCommunes_set to ', listBigCommunes())
@@ -41,6 +42,7 @@ export const SearchCommune = props => {
 
   // min number of chars typed by user before showing list
   const MIN_CHARS_SHOW_LIST = 3
+  u.permalog('SearchCommune 2222222222')
   const updateList = val => {
     userEntry_set('')
     if (val.length === 0) {
@@ -162,7 +164,7 @@ export const SearchCommune = props => {
 
   const getItem = async location => {
     // params.addItemToList(location['name'])
-
+	u.permalog('getItem 11111111111')
     console.log(
       `getItem location=${location} ${location['name']} ${location['lon']}`
     )
@@ -230,10 +232,10 @@ export const SearchCommune = props => {
             <View style={st.buttonItem}>
               <Pressable
                 style={st.buttonItem}
-                onPress={() => getItem(itemData.item)}
+                onPress={() =>{u.permalog('Press'); getItem(itemData.item)}}
               >
                 <Text style={[st.buttonItem, st.buttonItemText]}>
-                  {displayCommune(itemData.item)}{' '}
+                   {displayCommune(itemData.item)}{' '}
                 </Text>
               </Pressable>
             </View>

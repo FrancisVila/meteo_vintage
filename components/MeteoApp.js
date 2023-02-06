@@ -16,6 +16,7 @@ export default function MeteoApp () {
 	// let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=paris&appid=${apiKey}`;
 	let lat = 49.0889824331
 	let lon = -0.608826965285
+	u.permalog('11111111111111111111111')
 	const units = 'metric'
 	const lang = 'fr'
 	// full data retrieved from openweather
@@ -28,7 +29,7 @@ export default function MeteoApp () {
 	const [currentCommune_, currentCommune_set] = useState({ name: 'toto' })
 	// the list of currentCommune_ type objects the user keeps
 	const [userCommuneList_, userCommuneList_set] = useState([])
-  
+	u.permalog('2222222222222')
 	const props = {
 	  apiData_,
 	  apiData_set,
@@ -41,6 +42,7 @@ export default function MeteoApp () {
 	  userCommuneList_,
 	  userCommuneList_set
 	}
+	u.permalog('33333333333333')
 	useEffect(() => {
 		const rClS = async () => {
 		  try {
