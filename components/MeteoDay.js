@@ -74,12 +74,18 @@ const hourWeatherIcon00=(hourData)=> {
 const hourWeatherWind=(hourData)=> {
 	const rafales = Math.floor (3.6 * hourData["wind"]["gust"])
 	if (rafales > 20)
-		return <View style={[st.windDesc, st.c1]}><Text style={st.hourDesc}> vent</Text><Text> {rafales} </Text><Text style={st.hourDesc}>km/h</Text></View>
+		return <View style={[st.windDescView, st.c1]}><Text style={st.hourDesc}> vent</Text><Text style={st.hourDescWindSpeed}> {rafales} </Text><Text style={st.hourDesc}>km/h</Text></View>
 	else return null
     // let windStr = `${Math.floor (3.6 * hourData["wind"]["speed"])} ${Math.floor (3.6 * hourData["wind"]["gust"])}`
 	// console.log("windStr=", windStr)
     // return <Text>{windStr}</Text> 
 }
+
+const hourTemp=(hourData)=><Text> {parseInt (hourData["main"]["temp"])}° </Text>
+
+const hourDesc=(hourData)=> <Text style={[st.hourDesc, st.c2]}> {hourData["weather"][0]["description"]} </Text>
+
+
 const saveCommuneList =  (data) => {
     const strData = JSON.stringify(data)
     xfs.writeAsStringAsync(fileUri, strData, { encoding: xfs.EncodingType.UTF8 });
@@ -91,9 +97,6 @@ const saveCommuneList =  (data) => {
     dataStr_set(strContent)
     return strContent.toString()
   }
-const hourTemp=(hourData)=><Text> {parseInt (hourData["main"]["temp"])}° </Text>
-
-const hourDesc=(hourData)=> <Text style={[st.hourDesc, st.c2]}> {hourData["weather"][0]["description"]} </Text>
 
 const handleSearch = ()=> {
 	props.screenToShow_set('SearchCommune')
@@ -144,8 +147,9 @@ let dayFromNow = 0
 }
 
 const st=StyleSheet.create({
-	windDesc : {display: 'flex', flexDirection:'row' },
-	hourDesc : {fontSize:9, justifyContent: 'center'},
+	windDescView : {display: 'flex', flexDirection:'row', height:'100%' , alignItems: 'flex-start'},
+	hourDesc : {display: 'flex', fontSize:9, justifyContent: 'flex-end'},
+	hourDescWindSpeed : {display: 'flex', fontSize:16, alignItems: 'center'},
 	divider:{ position:'absolute', top:-60, width:'100%', backgroundColor:'#ddd', height:170, paddingTop:50, zIndex:-10},
 	dayHeader :{fontSize:20, top:60, position:'absolute',  left:-45, width:'100%', borderTopColor:'#333', borderTopWidth: 1,marginTop:15  },
 	wrap_row:{flexWrap:'wrap', flexDirection:'row', marginLeft:50, marginTop:5, alignItems: 'center'},
