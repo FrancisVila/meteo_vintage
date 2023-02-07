@@ -7,7 +7,8 @@ import {
     Pressable,
     StyleSheet,
     Alert,
-    Keyboard
+    Keyboard,
+	ScrollView
   } from 'react-native'
   import * as xfs from 'expo-file-system'
   import {
@@ -18,26 +19,27 @@ import {
   import React, { useState } from 'react'
   import * as FileSystem from 'expo-file-system'
   import Ionicons from '@expo/vector-icons/Ionicons'
+  // import AsyncStorage from '@react-native-async-storage/async-storage';
+import SearchCommune from './SearchCommune';
   
   export const ManageCommunes =  (props) => {
-    
 
-    userCommuneList_set = props.navigation.state.params.userCommuneList_set
-    userCommuneList_ = props.navigation.state.params.userCommuneList_
+    // userCommuneList_set = props.navigation.state.params.userCommuneList_set
+    // userCommuneList_ = props.navigation.state.params.userCommuneList_
     
     const  deleteItem =  (location) => {
 
 
 
       //  remove location from userCommuneList_
-      const newList = userCommuneList_.filter(c => {
+      const newList = props.userCommuneList_.filter(c => {
 
 
 
         return c['name'] !== location['name']}
         )
 
-      userCommuneList_set(newList)
+      props.userCommuneList_set(newList)
        saveCommuneList(newList)
       
     }
@@ -61,59 +63,72 @@ import {
         return fileContent
       }
       catch {return[]}
-      
-    
-
     }
+
+	const handleCityClick= () => {
+		console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+		props.screenToShow_set('MeteoDay')
+	}
     
     return  (
-        <FlatList 
-        style={{margin:20}}
-          data={userCommuneList_}
-          renderItem={itemData => <View style={styles.listItem}> 
-          
-              <Text style={{ fontSize:20}}> 
-                {itemData.item['name']} {itemData.item['zip']}
-              </Text>
-              <Pressable onPress={() =>  deleteItem(itemData.item)} >
-                  <Ionicons size={20} name='trash' style={styles.closeButton} />
+		<ScrollView>
+		<View style={st.container}>
+		
+        <FlatList style={st.c3}
+          data={props.userCommuneList_}
+          renderItem={itemData => <View style={st.listItem}> 
+			   <Text style={{ fontSize:20}} onPress={handleCityClick} > 
+                  {itemData.item['name']} {itemData.item['zip']}
+               </Text>
+              <Pressable  onPress={() =>  deleteItem(itemData.item)} >
+                  <Ionicons size={20} name='trash' style={st.closeButton} />
                 </Pressable>
               </View>}
         ></FlatList>
+		<View style={st.addCommune} ><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text>
+		<Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text>
+		<Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text>
+		<Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text>
+		<Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text>
+		<Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text>
+		<Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text>
+		<Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text><Text>RRRR</Text>
+		</View>
+	</View>
+	</ScrollView>
     )
   }
   
-  const styles = StyleSheet.create({
+  const st = StyleSheet.create({
+	c3:{backgroundColor: '#fDf'},
+	c2 : {
+		backgroundColor:'#Dff'
+	},
+
+	container:{
+		// display:'flex',
+		backgroundColor:'#ffD', 
+		justifyContent:'flex-start'
+	},
+
+	addCommune:{ 
+		backgroundColor:'#Dff',
+		
+	},
     screenWrapper:{
       marginTop:30,
     },
   
-    modalBody:{
-      flex:1,
-      overflow:'hidden',
-      height:"100%",
-      marginTop: 20,
-      marginLeft: 20,
-      marginRight :20,
-    },
+
   
-    modalWrapper: {
-      flexDirection: 'column',
-      margin: 20,
-      padding: 10,
-      color: '#000',
-      borderRadius: 10,
-      backgroundColor: '#fff',
-      zIndex: 20, // works on ios
-      elevation: 20, 
-      height:"80%"
-    },
+
     listItem:{
       flexDirection: 'row',
       justifyContent: 'space-between',
       // alignItems: 'stretch' ,
       borderBottomColor:'#777',
       borderBottomWidth: StyleSheet.hairlineWidth,
+	  width:'70%'
   },
   
   modalHeaderText:{fontSize: 40},
@@ -121,6 +136,8 @@ import {
   closeButton: {
     // alignSelf :'flex-end',
     color: '#f00', 
+	position: 'absolute',
+	right:5,
   },
     red:{color: '#f00'},
   
