@@ -48,16 +48,23 @@ readCommuneList
 function HourData({hourData}) {
 	const hourAsDate = u.getDateFromUnix( hourData["dt"])
 	let weatherStr = hourData["weather"][0]["icon"]
+	const hourAsString = ("0" + hourAsDate.getHours()).slice(-2) + ":00"
+	let nightStyle = null
+	if (hourAsString==='01:00' || hourAsString==='04:00' || hourAsString==='22:00'  )
+		{ nightStyle = st.nightStyle}
 	const rafales = Math.floor (3.6 * hourData["wind"]["gust"])
 	console.log('hourData["main"]=', hourData["main"])
+	const feelsLike = parseInt (hourData["main"]["feels_like"]) 
+	const temp = parseInt (hourData["main"]["temp"])
+	const desc = hourData["weather"][0]["description"]
 return(
-  <View style={st.hourData}>
-	<Text key={hourData["dt"]}>   {("0" + hourAsDate.getHours()).slice(-2) }:00 </Text>
+  <View style={[st.hourData, nightStyle]}>
+	<Text key={hourData["dt"]}>   {hourAsString} </Text>
 	<WeatherIcon00 width={30} weather={weatherStr} /> 
-	<Text style={[st.temp]}> {parseInt (hourData["main"]["temp"])}° </Text>
+	<Text style={[st.temp]}> {temp}° </Text>
 	<View style={st.descColumn}>
-		<Text style={[st.hourDesc]}> {hourData["weather"][0]["description"]} </Text>
-		<Text style={[st.hourDesc]}>T. ressentie: {parseInt (hourData["main"]["feels_like"]) }°</Text>
+		<Text style={[st.hourDesc]}> {desc} </Text>
+		<Text style={[st.hourDesc]}>T. ressentie: <Text style={st.feelsLike}>{feelsLike}°</Text></Text>
 	</View>
 	<View style={[st.windDescView, (rafales>20)?'':st.hidden]}>
 		<Text style={[st.hourDesc]}>vent</Text><Text style={st.hourDescWindSpeed}> {rafales} </Text><Text style={st.hourDesc}>km/h</Text>
@@ -74,7 +81,7 @@ const dayInFrench= (hourData, dayFromNow)=> {
 	let dayStr=""
 	switch (dayFromNow) {
 	case 0 :  dayStr = "Auj." ; break;
-	case 2 :  dayStr = "Dem." ; break;
+	case 1 :  dayStr = "Dem." ; break;
 	default: dayStr = u.getDayInFrench( (hourAsDate), 'Ddd') + ' ' + hourAsDate.getDate() ; break;}
 	return dayStr
 }
@@ -106,7 +113,7 @@ const ShowWeather = ({hourData}) => {
 	// return <Text>{hourData.dt}</Text>
 	console.log("dayOfWeek=", dayOfWeek)
 	 const ret = 
-	 <View>
+	 <View >
 	 {(dayOfWeek === dayInFrench(hourData))? 
 		// if new day, show day header
 			null: 
@@ -170,7 +177,8 @@ let dayFromNow = 0
 		<Text style={st.searchIcon} onPress={handleSearch}>⌕</Text>
 	</View>
         <View style={[st.layer_middle]}>
-		{props.apiData_["list"].map((hourData) => <ShowWeather  hourData={hourData} ></ShowWeather>)}
+		{props.apiData_["list"].map((hourData) => {
+			return (<ShowWeather  hourData={hourData} ></ShowWeather>)})}
         </View>
 		</ScrollView>
     </View>
@@ -178,6 +186,8 @@ let dayFromNow = 0
 }
 
 const st=StyleSheet.create({
+	nightStyle: {backgroundColor: '#ddd'},
+	feelsLike: {fontSize:12, fontWeight:'bold'},
 	descColumn : {display:'flex',
 	flexDirection:'column'},
 	hidden: {display:'none'},
@@ -185,11 +195,11 @@ const st=StyleSheet.create({
 	temp: {fontSize:16, fontWeight:'900'},
 	windDescView : {
 		position: 'absolute',
-		right:0,
+		right:5,
 		flexDirection:'row', 
 		height:'100%' , 
 		alignItems: 'center',
-		alignSelf:'flex-end',
+
 	},
 	hourData : {		
 		display: 'flex', 
@@ -197,25 +207,33 @@ const st=StyleSheet.create({
 	height:'100%' , 
 	width:'100%',
 	alignItems: 'center',
+	borderBottomWidth: 0.2,
+	borderBottomColor: '#555',
+	marginBottom:0,
+	marginTop: 0
 
 	},
 	hourDesc : {display: 'flex', fontSize:10, },
-	hourDescWindSpeed : {display: 'flex', fontSize:16, },
-	divider:{ position:'absolute', top:-60, width:'100%', backgroundColor:'#ddd', height:170,  zIndex:-10},
+	hourDescWindSpeed : {
+		display: 'flex', 
+		fontSize:14, 
+		fontWeight: 'bold'
+	},
+	divider:{ position:'absolute', top:-60, width:'100%',   zIndex:-10},
 	dayHeader :{
 		fontSize:14, 
 		top:60, 
 		position:'absolute',  
 		left:0, width:'100%', 
-		borderTopColor:'#333', 
-		borderTopWidth: 1,
+		borderTopColor:'#AAA', 
+		borderTopWidth: 3,
 		marginTop:0 ,
 		fontFamily: 'sans-serif-condensed',
 		fontWeight: 'bold',
 		paddingTop:10,
 		paddingLeft:5,
 	},
-	wrap_row:{flexWrap:'wrap', flexDirection:'row', marginLeft:100, marginTop:5, alignItems: 'center'},
+	wrap_row:{flexWrap:'wrap', flexDirection:'row', marginLeft:100, paddingTop:0, marginTop:0, marginBottom:0, alignItems: 'center'},
 	headerView : {width:'100%', flexDirection:'row' },
 	searchIconView : { position: 'absolute', left:0 },
 	searchIcon : {fontSize:40, position: 'absolute', right:20, top: 15 },
