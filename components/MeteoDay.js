@@ -70,8 +70,6 @@ return(
 		<Text style={[st.hourDesc]}>vent</Text><Text style={st.hourDescWindSpeed}> {rafales} </Text><Text style={st.hourDesc}>km/h</Text>
 	</View>
   </View>);
-
-
 }
 
 
