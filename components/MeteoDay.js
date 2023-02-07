@@ -61,7 +61,7 @@ return(
   <View style={[st.hourData, nightStyle]}>
 	<Text key={hourData["dt"]}>   {hourAsString} </Text>
 	<WeatherIcon00 width={30} weather={weatherStr} /> 
-	<Text style={[st.temp]}> {temp}° </Text>
+	<Text style={[st.temp]}>    {temp}°  </Text>
 	<View style={st.descColumn}>
 		<Text style={[st.hourDesc]}> {desc} </Text>
 		<Text style={[st.hourDesc]}>T. ressentie: <Text style={st.feelsLike}>{feelsLike}°</Text></Text>
@@ -113,7 +113,7 @@ const ShowWeather = ({hourData}) => {
 	// return <Text>{hourData.dt}</Text>
 	console.log("dayOfWeek=", dayOfWeek)
 	 const ret = 
-	 <View >
+	 <View  >
 	 {(dayOfWeek === dayInFrench(hourData))? 
 		// if new day, show day header
 			null: 
@@ -210,10 +210,12 @@ const st=StyleSheet.create({
 	borderBottomWidth: 0.2,
 	borderBottomColor: '#555',
 	marginBottom:0,
-	marginTop: 0
-
+	marginTop: 0,
+	borderLeftWidth:0.5, 
+	borderLeftColor:'#555',
+	height:40,
 	},
-	hourDesc : {display: 'flex', fontSize:10, },
+	hourDesc : {display: 'flex', fontSize:10, lineHeight:13},
 	hourDescWindSpeed : {
 		display: 'flex', 
 		fontSize:14, 
