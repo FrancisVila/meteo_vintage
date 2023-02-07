@@ -49,13 +49,19 @@ function HourData({hourData}) {
 	const hourAsDate = u.getDateFromUnix( hourData["dt"])
 	let weatherStr = hourData["weather"][0]["icon"]
 	const rafales = Math.floor (3.6 * hourData["wind"]["gust"])
+	console.log('hourData["main"]=', hourData["main"])
 return(
-  <View style={st.windDescView}>
- <Text key={hourData["dt"]}>   {("0" + hourAsDate.getHours()).slice(-2) }:00 </Text>
- <WeatherIcon00 width={30} weather={weatherStr} /> 
- <Text style={[st.temp]}> {parseInt (hourData["main"]["temp"])}° </Text>
- <Text style={[st.hourDesc]}> {hourData["weather"][0]["description"]} </Text>
- <View style={[st.windDescView, (rafales>20)?'':st.hidden]}><Text style={[st.hourDesc]}> vent</Text><Text style={st.hourDescWindSpeed}> {rafales} </Text><Text style={st.hourDesc}>km/h</Text></View>
+  <View style={st.hourData}>
+	<Text key={hourData["dt"]}>   {("0" + hourAsDate.getHours()).slice(-2) }:00 </Text>
+	<WeatherIcon00 width={30} weather={weatherStr} /> 
+	<Text style={[st.temp]}> {parseInt (hourData["main"]["temp"])}° </Text>
+	<View style={st.descColumn}>
+		<Text style={[st.hourDesc]}> {hourData["weather"][0]["description"]} </Text>
+		<Text style={[st.hourDesc]}>T. ressentie: {parseInt (hourData["main"]["feels_like"]) }°</Text>
+	</View>
+	<View style={[st.windDescView, (rafales>20)?'':st.hidden]}>
+		<Text style={[st.hourDesc]}>vent</Text><Text style={st.hourDescWindSpeed}> {rafales} </Text><Text style={st.hourDesc}>km/h</Text>
+	</View>
   </View>);
 
 
@@ -120,7 +126,10 @@ let dayFromNow = 0
 
 // console.log("MeteoDay props.apiData_['list']=", props.apiData_['list'])
   return (
-    <View style={[ [st.container]]}>
+    <View style={[ st.container]}>
+
+
+
 	      <ScrollView style={[st.scroller, st.hidden]}>
 		  <Text style={{fontFamily: 'normal', fontWeight:'bold'}}>  normal </Text>
         <Text style={{fontFamily: 'notoserif', fontWeight:'bold'}}>  notoserif </Text>
@@ -169,11 +178,30 @@ let dayFromNow = 0
 }
 
 const st=StyleSheet.create({
+	descColumn : {display:'flex',
+	flexDirection:'column'},
 	hidden: {display:'none'},
 	scroller: {flex:1},
 	temp: {fontSize:16, fontWeight:'900'},
-	windDescView : {display: 'flex', flexDirection:'row', height:'100%' , alignItems: 'center'},
-	hourDesc : {display: 'flex', fontSize:9, },
+	windDescView : {
+
+		flexDirection:'row', 
+		height:'100%' , 
+		alignItems: 'center',
+
+		alignSelf:'flex-end',
+		backgroundColor:'red',
+
+	},
+	hourData : {		
+		display: 'flex', 
+	flexDirection:'row', 
+	height:'100%' , 
+	width:'100%',
+	alignItems: 'center',
+
+	},
+	hourDesc : {display: 'flex', fontSize:10, },
 	hourDescWindSpeed : {display: 'flex', fontSize:16, },
 	divider:{ position:'absolute', top:-60, width:'100%', backgroundColor:'#ddd', height:170,  zIndex:-10},
 	dayHeader :{
