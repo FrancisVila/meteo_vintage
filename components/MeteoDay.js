@@ -184,14 +184,12 @@ const st=StyleSheet.create({
 	scroller: {flex:1},
 	temp: {fontSize:16, fontWeight:'900'},
 	windDescView : {
-
+		position: 'absolute',
+		right:0,
 		flexDirection:'row', 
 		height:'100%' , 
 		alignItems: 'center',
-
 		alignSelf:'flex-end',
-		backgroundColor:'red',
-
 	},
 	hourData : {		
 		display: 'flex', 
