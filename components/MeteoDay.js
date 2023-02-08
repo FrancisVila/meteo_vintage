@@ -104,7 +104,8 @@ const saveCommuneList =  (data) => {
   }
 
 const handleSearch = ()=> {
-	props.screenToShow_set('SearchCommune')
+	props.screenToShow_set('ManageCommunes')
+	// props.screenToShow_set('SearchCommune')
 }
 
 const ShowWeather = ({hourData}) => {

@@ -64,7 +64,7 @@ export default function MeteoApp () {
 			newData = get_data_from_open_weather_map(lat, lon)
 			console.log('MeteoApp rClS 1 apiData_set', newData)
 			apiData_set(newData)
-	
+			
 			screenToShow_set('MeteoDay')
 		  } catch (err) {
 			screenToShow_set('SearchCommune')
@@ -130,5 +130,6 @@ export default function MeteoApp () {
   if (screenToShow_ === 'MeteoDay') return <MeteoDay {...props} />
   if (screenToShow_ === 'Properties') return <Spinner {...props} />
   if (screenToShow_ === 'SearchCommune')   return <SearchCommune {...props} />
+  if (screenToShow_ === 'ManageCommunes')   return <ManageCommunes {...props} />
   
   }
